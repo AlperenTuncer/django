@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 04</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+				
+	         
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+	  		<h1><a href="#" class="logo">Asset Store</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Category-1</a>
+          </li>
+          <li>
+              <a href="#"><span class="fa fa-sticky-note mr-3"></span> Category-2</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Category-3</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Category-4</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Category-5</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Category-6</a>
+          </li>
+        </ul>
+
+    	</nav>
+
+     
+      <div id="content" class="p-4 p-md-5 pt-5 d-flex align-content-between flex-wrap">
+        {% block card %}
+        {% for item in asset %}
+        <div class="card" style="width: 18rem; margin: 15px;" >
+          <img class="card-img-top" src="{{item.img.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">Category: {{item.ctgry}} <br/>Description: It's a {{item.prop}} </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        {% endfor %}
+       
+        {% endblock %}
+
+  </body>
+</html>
